@@ -5,10 +5,10 @@ import {
   FETCH_POST
 } from './types';
 
-export const toggleTheme = theme => {
+export const toggleTheme = (theme) => {
   return {
     type: TOGGLE_THEME,
-    payload: theme
+    payload: theme === 'light' ? 'dark' : 'light'
   };
 };
 
