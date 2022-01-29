@@ -1,22 +1,20 @@
-import { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { fetchPosts } from '../actions';
+import { Router, Route } from 'react-router-dom'; 
 
-const App = (props) => {
-  useEffect(() => {
-    props.fetchPosts();
-  }, [])
-  
+import Header from "./Header";
+import PostList from "./posts/PostList";
+import PostDetail from './posts/PostDetail';
+import history from '../history';
+
+const App = () => {
   return (
-      <div>{props.posts.length}</div>
+    <Router history={history}>
+      <div>
+        <Header />
+        <Route path="/" exact component={PostList} />
+        <Route path="/posts/:id" exact component={PostDetail} />
+      </div>
+    </Router>
   );
 };
 
-const mapStateToProps = (state) => {
-  return { posts: state.posts };
-};
-
-export default connect(
-  mapStateToProps,
-  { fetchPosts }
-)(App);
+export default App;
