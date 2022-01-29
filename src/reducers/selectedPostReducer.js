@@ -1,12 +1,11 @@
 import {
-	SELECT_POST
+	FETCH_POST
 } from '../actions/types';
 
 const selectedPostReducer = (state = {}, action) => {
 	switch (action.type) {
-		case SELECT_POST:
-            console.log('test', action.payload)
-			return action.payload.posts.find(post => post.id === action.payload.id);
+		case FETCH_POST:
+			return action.payload;
 		default:
 			return state;
 	}

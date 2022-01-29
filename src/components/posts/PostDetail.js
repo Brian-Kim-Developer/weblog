@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { selectPost } from '../../actions';
+import { fetchPost } from '../../actions';
 
 const PostDetail = (props) => {
 
-	const { post, posts, selectPost } = props;
+	const { post, fetchPost } = props;
 
   useEffect(() => {
-    selectPost(posts, Number(props.match.params.id));
+    fetchPost(Number(props.match.params.id));
   }, [])
 
   return (
@@ -22,12 +22,11 @@ const PostDetail = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-		posts: state.posts,
 		post: state.selectedPost
 	};
 };
 
 export default connect(
   mapStateToProps,
-  { selectPost }
+  { fetchPost }
 )(PostDetail);

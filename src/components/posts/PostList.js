@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { fetchPosts, selectPost } from '../../actions';
+import { fetchPosts } from '../../actions';
 
 const PostList = (props) => {
 
@@ -32,5 +32,5 @@ const mapStateToProps = (state) => {
 
 export default connect(
   mapStateToProps,
-  { fetchPosts, selectPost }
+  { fetchPosts }
 )(PostList);

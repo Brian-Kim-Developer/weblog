@@ -2,7 +2,7 @@ import streams from '../apis/posts';
 import {
   TOGGLE_THEME,
 	FETCH_POSTS,
-  SELECT_POST
+  FETCH_POST
 } from './types';
 
 export const toggleTheme = theme => {
@@ -18,12 +18,8 @@ export const fetchPosts = () => async dispatch => {
   dispatch({ type: FETCH_POSTS, payload: response.data });
 };
 
-export const selectPost = (posts, id) => {
-  return {
-    type: SELECT_POST,
-    payload: {
-      posts,
-      id
-    }
-  }
+export const fetchPost = (id) => async dispatch => {
+  const response = await streams.get('/posts');
+
+  dispatch({ type: FETCH_POST, payload: response.data.find(post => post.id === id) });
 }
