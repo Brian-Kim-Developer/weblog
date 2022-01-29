@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import Moment from 'react-moment';
+
 import { fetchPost } from '../../actions';
 
 const PostDetail = (props) => {
@@ -12,7 +14,7 @@ const PostDetail = (props) => {
 
   return (
 		<React.Fragment>
-			<div>ID: {post.id}</div>
+			<Moment format="MMM D, YYYY" date={post.date} />
 			<div>User ID: {post.userId}</div>
 			<div>Title: {post.title}</div>
 			<div>Body: {post.body}</div>
