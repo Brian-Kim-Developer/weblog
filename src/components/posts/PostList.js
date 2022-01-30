@@ -24,7 +24,7 @@ const PostList = (props) => {
 							return <Post key={post.id} post={post}/>
 						})
 					:
-						"Loading..."
+            "Loading..."
 			}
       <Footer />
 		</React.Fragment>
