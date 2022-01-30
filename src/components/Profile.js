@@ -10,7 +10,7 @@ const Profile = (props) => {
   return (
     <div className="profile">
         <img src="https://overreacted.io/static/profile-pic-c715447ce38098828758e525a1128b87.jpg" alt="Profile"/>
-        <p className={theme}>Personal blog by <Link to="https://mobile.twitter.com/dan_abramov" className={theme}>Dan Abramov</Link>. I&nbsp;explain with words and code.</p>
+        <p className={theme}>Personal blog by <a href="https://mobile.twitter.com/dan_abramov" className={theme}>Dan Abramov</a>. I&nbsp;explain with words and code.</p>
     </div>
   );
 };
