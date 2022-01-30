@@ -4,31 +4,42 @@ import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 
 import { fetchPosts } from '../../actions';
+import Profile from '../Profile';
+import '../../style/posts/PostList.scss';
 
 const PostList = (props) => {
 
-	const { posts, fetchPosts } = props;
+	const { theme, posts, fetchPosts } = props;
 
   useEffect(() => {
     fetchPosts();
   }, [])
  
 	return (
-		posts.length && posts.map(post => {
-			return (
-				<React.Fragment key={post.id}>
-					<Moment format="MMM D, YYYY" date={post.date} />
-					<div>User ID: {post.userId}</div>
-					<Link to={`/posts/${post.id}`}>Title: {post.title}</Link>
-					<div>Body: {post.body}</div>
-				</React.Fragment>
-			)
-		})
+		<React.Fragment>
+			<Profile />
+			{posts.length && posts.map(post => {
+				return (
+					<div key={post.id} className="post">
+						<header>
+							<h3>
+								<Link to={`/posts/${post.id}`} className={theme}>{post.title}</Link>
+							</h3>
+							<small><Moment format="MMM D, YYYY" date={post.date} className={`date ${theme}`} /></small>
+						</header>
+						<p className={theme}>{post.body}</p>
+					</div>
+				)
+			})}
+		</React.Fragment>
   );
 };
 
 const mapStateToProps = (state) => {
-  return { posts: state.posts };
+  return {
+		theme: state.theme,
+		posts: state.posts
+	};
 };
 
 export default connect(

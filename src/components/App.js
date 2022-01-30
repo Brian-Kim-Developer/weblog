@@ -5,10 +5,12 @@ import PostList from "./posts/PostList";
 import PostDetail from './posts/PostDetail';
 import history from '../history';
 
+import '../style/App.scss';
+
 const App = () => {
   return (
     <Router history={history}>
-      <div>
+      <div className="container">
         <Header />
         <Route path="/" exact component={PostList} />
         <Route path="/posts/:id" exact component={PostDetail} />

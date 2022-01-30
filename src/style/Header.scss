@@ -1,0 +1,46 @@
+$white: #FFF;
+$dark: #222;
+
+h1 {
+	font-family: 'Montserrat', sans-serif;
+  	font-size: 1.98818rem;
+	font-weight: 900;
+	line-height: 2.625rem;
+	margin-bottom: 0px;
+	margin-top: 0px;
+
+	&.light {
+		color: $dark;
+	}
+
+	&.dark {
+		color: $white;
+	}
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.625rem;
+
+	a {
+		box-shadow: none;
+		text-decoration: none;
+		&:hover {
+			box-shadow: none;
+			text-decoration: none;
+		}
+	}
+}
+
+.react-toggle {
+	touch-action: pan-x;
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	background-color: transparent;
+	border: 0;
+	padding: 0;
+	user-select: none;
+}

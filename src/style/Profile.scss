@@ -1,0 +1,58 @@
+$textLinkLight: #D23669;
+$textLinkDark: #FFA7C4;
+$textNormalWhite: hsla(0,0%,100%,0.88);
+$textNormalBlack: #000;
+
+.profile {
+	display: flex;
+	margin-bottom: 3.5rem;
+
+	img {
+		margin-right: 0.875rem;
+		margin-bottom: 0px;
+		width: 3.5rem;
+		height: 3.5rem;
+		border-radius: 50%;
+	}
+	
+	p {
+		max-width: 310px;
+		font-family: 'Merriweather', serif;
+		margin-bottom: 1.75rem;
+		line-height: 1.75;
+
+		&.light {
+			color: $textNormalBlack;
+		}
+
+		&.dark {
+			color: $textNormalWhite;
+		}
+	}
+	
+	a {
+		text-decoration: underline;
+		text-underline-position: under;
+
+		&.light {
+			color: $textLinkLight;
+		}
+
+		&.dark {
+			color: $textLinkDark;
+		}
+
+		&:hover {
+			text-decoration: none;
+
+			&.light {
+				color: $textLinkLight;
+			}
+
+			&.dark {
+				color: $textLinkDark;
+			}
+		}
+	}
+}
+

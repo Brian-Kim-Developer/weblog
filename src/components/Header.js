@@ -2,17 +2,18 @@ import { Link } from 'react-router-dom';
 import { toggleTheme } from '../actions';
 import { connect } from 'react-redux';
 
+import '../style/Header.scss';
+
 const Header = (props) => {
 
   const { theme, toggleTheme } = props;
 
   return (
-    <div className="">
+    <div className="header">
       <Link to="/">
-        Overreacted
+        <h1 className={props.theme}>Overreacted</h1>
       </Link>
-      <div>{theme}</div>
-      <button onClick={() => toggleTheme(theme)}>Toggle Theme</button>
+      <button className="react-toggle" onClick={() => toggleTheme(theme)}>Toggle Theme</button>
     </div>
   );
 };
