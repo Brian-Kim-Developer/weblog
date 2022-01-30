@@ -13,6 +13,15 @@ footer {
 
 	span {
 		font-size: 1rem;
+
+		&.light {
+			color: $textNormalBlack;
+		}
+
+		&.dark {
+			color: $textNormalWhite;
+		}
+		
 	}
 
 	a {

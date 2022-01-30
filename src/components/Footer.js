@@ -13,9 +13,9 @@ const Footer = (props) => {
 				<Link to="/rss.xml" target="_blank" rel="noopener noreferrer" className={theme}>rss</Link>
 			</div>
 			<a href="https://mobile.twitter.com/dan_abramov" target="_blank" rel="noopener noreferrer" className={theme}>twitter</a>
-			<span>&nbsp;•&nbsp;</span>
+			<span className={theme}>&nbsp;•&nbsp;</span>
 			<a href="https://github.com/gaearon" target="_blank" rel="noopener noreferrer" className={theme}>github</a>
-			<span>&nbsp;•&nbsp;</span>
+			<span className={theme}>&nbsp;•&nbsp;</span>
 			<a href="https://stackoverflow.com/users/458193/dan-abramov" target="_blank" rel="noopener noreferrer" className={theme}>stack overflow</a>
 		</footer>
   );
