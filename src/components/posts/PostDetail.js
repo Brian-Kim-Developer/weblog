@@ -3,27 +3,32 @@ import { connect } from 'react-redux';
 import Moment from 'react-moment';
 
 import { fetchPost } from '../../actions';
+import '../../style/posts/PostDetail.scss';
 
 const PostDetail = (props) => {
 
-	const { post, fetchPost } = props;
+	const { post, fetchPost, theme } = props;
 
   useEffect(() => {
     fetchPost(Number(props.match.params.id));
-  }, [])
+  }, [fetchPost, props.match.params.id])
 
   return (
-		<React.Fragment>
-			<Moment format="MMM D, YYYY" date={post.date} />
-			<div>User ID: {post.userId}</div>
-			<div>Title: {post.title}</div>
-			<div>Body: {post.body}</div>
-		</React.Fragment>
+		<div className={`post-container ${theme}`}>
+			<header>
+				<h1>{post.title}</h1>
+				<p><Moment format="MMM D, YYYY" date={post.date} /></p>
+			</header>
+			<div>
+				<p className="content">{post.body}</p>
+			</div>
+		</div>
   );
 };
 
 const mapStateToProps = (state) => {
   return {
+		theme: state.theme,
 		post: state.selectedPost
 	};
 };

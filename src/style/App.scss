@@ -10,10 +10,12 @@ $dark: #282c35;
 }
 
 body {
+
   &.light {
       background-color: $white;
   }
   &.dark {
       background-color: $dark;
   }
+
 }

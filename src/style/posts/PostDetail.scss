@@ -1,0 +1,42 @@
+$textLinkLight: #D23669;
+$textLinkDark: #FFA7C4;
+$textNormalWhite: hsla(0,0%,100%,0.88);
+$textNormalBlack: #000;
+
+.post-container {
+	
+	&.light {
+		color: $textNormalBlack;
+	}
+
+	&.dark {
+		color: $textNormalWhite;
+	}
+
+	h1 {
+		font-family: Montserrat, sans-serif;
+		font-weight: 900;
+		text-rendering: optimizeLegibility;
+		font-size: 2.5rem;
+		line-height: 1.1;
+		margin-top: 3.5rem;
+		margin-bottom: 1.75rem;
+		color: inherit;
+		word-break: break-word;
+	}
+
+	p {
+		font-family: 'Merriweather', serif;
+		font-size: 0.83255rem;
+    line-height: 1.75rem;
+    display: block;
+    margin-bottom: 1.75rem;
+    margin-top: -1.4rem;
+
+		&.content {
+			font-size: 1rem;
+			margin-top: unset;
+		}
+	}
+
+}

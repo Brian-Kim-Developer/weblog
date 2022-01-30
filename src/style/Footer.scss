@@ -1,0 +1,35 @@
+$textLinkLight: #D23669;
+$textLinkDark: #FFA7C4;
+$textNormalWhite: hsla(0,0%,100%,0.88);
+$textNormalBlack: #000;
+
+footer {
+	margin-top: 4.375rem;
+	padding-top: 1.75rem;
+
+	div {
+		float: right;
+	}
+
+	span {
+		font-size: 1rem;
+	}
+
+	a {
+		font-family: 'Merriweather', serif;
+		text-decoration: underline;
+		text-underline-position: under;
+
+		&.light {
+			color: $textLinkLight;
+		}
+
+		&.dark {
+			color: $textLinkDark;
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

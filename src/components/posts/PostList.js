@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { fetchPosts } from '../../actions';
 import Profile from '../Profile';
 import Post from './Post';
+import Footer from '../Footer';
 
 const PostList = (props) => {
 
@@ -11,14 +12,21 @@ const PostList = (props) => {
 
   useEffect(() => {
     fetchPosts();
-  }, [])
+  }, [fetchPosts])
  
 	return (
 		<React.Fragment>
 			<Profile />
-			{posts.length && posts.map(post => {
-				return <Post post={post}/>
-			})}
+			{
+				posts.length 
+					? 
+						posts.map(post => {
+							return <Post key={post.id} post={post}/>
+						})
+					:
+						"Loading..."
+			}
+      <Footer />
 		</React.Fragment>
   );
 };
